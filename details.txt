@@ -1,1 +1,1 @@
-The Daily News App is a static webpage built using only HTML and CSS. It includes a navigation bar, a top-story banner, news category cards, a trending sidebar, and a footer. With attractive layouts, hover effects, and a clean design, it looks like a real-world news website while being simple and responsive.
+The Daily News App is a responsive webpage built with HTML, CSS, and JavaScript. It features a navigation bar, hero banner, news cards, a trending sidebar, and a footer, with a mobile-friendly hamburger menu for easy access on all devices.
