@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daily News</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* Reset */
+    /* Basic Reset */
     * {
       margin: 0;
       padding: 0;
@@ -14,120 +15,106 @@
     }
 
     body {
-      background: #f5f5f5;
+      background: #f4f4f9;
       color: #333;
-      line-height: 1.6;
     }
 
     /* Navbar */
     header {
-      background: linear-gradient(to right, #0d47a1, #1976d2);
-      color: #fff;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: #1a73e8;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
     }
 
     header h1 {
-      font-size: 24px;
-      font-weight: bold;
+      font-size: 1.8rem;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
+    nav {
+      margin-top: 10px;
     }
 
-    nav ul li a {
-      color: #fff;
+    nav a {
+      color: white;
+      margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
     }
 
-    nav ul li a:hover {
-      color: #ffeb3b;
+    nav a:hover {
+      text-decoration: underline;
     }
 
     /* Hero Section */
     .hero {
-      background: url("https://source.unsplash.com/1200x400/?news") no-repeat center center/cover;
-      color: #fff;
-      text-align: center;
-      padding: 100px 20px;
-      position: relative;
+      background: url("https://picsum.photos/1200/400?random=1") no-repeat center center/cover;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      font-size: 2rem;
+      font-weight: bold;
     }
 
-    .hero h2 {
-      font-size: 36px;
-      background: rgba(0, 0, 0, 0.6);
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
-
-    /* Layout */
+    /* News Section */
     .container {
       display: grid;
       grid-template-columns: 3fr 1fr;
       gap: 20px;
-      padding: 20px 30px;
+      padding: 20px;
     }
 
-    /* News Cards */
-    .news-grid {
+    .news {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
     .card {
-      background: #fff;
-      border-radius: 10px;
+      background: white;
+      border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      transition: 0.3s;
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform: translateY(-5px);
     }
 
     .card img {
       width: 100%;
-      height: 160px;
+      height: 150px;
       object-fit: cover;
     }
 
-    .card-content {
-      padding: 15px;
+    .card h3 {
+      padding: 10px;
+      font-size: 1.2rem;
     }
 
-    .card-content h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #0d47a1;
-    }
-
-    .card-content p {
-      font-size: 14px;
-      color: #555;
+    .card p {
+      padding: 0 10px 15px;
+      font-size: 0.9rem;
+      color: #666;
     }
 
     /* Sidebar */
     .sidebar {
-      background: #fff;
+      background: white;
       padding: 15px;
-      border-radius: 10px;
+      border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    .sidebar h3 {
-      margin-bottom: 15px;
-      font-size: 18px;
-      color: #1976d2;
+    .sidebar h2 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      border-bottom: 2px solid #1a73e8;
+      padding-bottom: 5px;
     }
 
     .sidebar ul {
@@ -135,16 +122,18 @@
     }
 
     .sidebar ul li {
-      margin-bottom: 10px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 5px;
-      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #1a73e8;
     }
 
     /* Footer */
     footer {
-      background: #0d47a1;
-      color: #fff;
+      background: #1a73e8;
+      color: white;
       text-align: center;
       padding: 15px;
       margin-top: 20px;
@@ -155,6 +144,9 @@
       .container {
         grid-template-columns: 1fr;
       }
+      .hero {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -163,67 +155,48 @@
   <header>
     <h1>Daily News</h1>
     <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Politics</a></li>
-        <li><a href="#">Sports</a></li>
-        <li><a href="#">Entertainment</a></li>
-        <li><a href="#">Tech</a></li>
-      </ul>
+      <a href="#">Home</a>
+      <a href="#">Politics</a>
+      <a href="#">Sports</a>
+      <a href="#">Technology</a>
+      <a href="#">Entertainment</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <h2>Breaking: Major Global Event Unfolds</h2>
-  </section>
+  <div class="hero">Top Headlines of the Day</div>
 
   <!-- Main Content -->
   <div class="container">
     <!-- News Cards -->
-    <div class="news-grid">
+    <div class="news">
       <div class="card">
-        <img src="https://source.unsplash.com/400x250/?politics" alt="Politics">
-        <div class="card-content">
-          <h3>Politics Update</h3>
-          <p>Leaders meet to discuss major reforms in global policy making.</p>
-        </div>
+        <img src="https://picsum.photos/400/200?random=2" alt="News">
+        <h3>Breaking: Major Event Shakes the World</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus eros id libero.</p>
       </div>
 
       <div class="card">
-        <img src="https://source.unsplash.com/400x250/?sports" alt="Sports">
-        <div class="card-content">
-          <h3>Sports News</h3>
-          <p>Biggest sports event of the year sees record-breaking performance.</p>
-        </div>
+        <img src="https://picsum.photos/400/200?random=3" alt="News">
+        <h3>Sports: Local Team Wins Championship</h3>
+        <p>Aenean nec dui et urna convallis finibus. Sed quis velit id lorem tempus sagittis.</p>
       </div>
 
       <div class="card">
-        <img src="https://source.unsplash.com/400x250/?entertainment" alt="Entertainment">
-        <div class="card-content">
-          <h3>Entertainment Buzz</h3>
-          <p>Latest blockbuster film breaks box office records worldwide.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://source.unsplash.com/400x250/?technology" alt="Tech">
-        <div class="card-content">
-          <h3>Tech Innovation</h3>
-          <p>New AI breakthrough is set to revolutionize industries globally.</p>
-        </div>
+        <img src="https://picsum.photos/400/200?random=4" alt="News">
+        <h3>Technology: New Smartphone Released</h3>
+        <p>Aliquam erat volutpat. Donec volutpat enim vel lectus gravida, sit amet vulputate libero bibendum.</p>
       </div>
     </div>
 
     <!-- Sidebar -->
     <aside class="sidebar">
-      <h3>Trending News</h3>
+      <h2>Trending Now</h2>
       <ul>
-        <li>Global market hits new high.</li>
-        <li>Famous athlete retires after 20 years.</li>
-        <li>New smartphone model released.</li>
-        <li>Concert tour announced worldwide.</li>
-        <li>Climate summit calls for action.</li>
+        <li><a href="#">Election Updates 2025</a></li>
+        <li><a href="#">Cricket World Cup Highlights</a></li>
+        <li><a href="#">Top Gadgets of the Year</a></li>
+        <li><a href="#">New Movie Releases</a></li>
       </ul>
     </aside>
   </div>
